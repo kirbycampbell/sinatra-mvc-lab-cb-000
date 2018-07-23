@@ -13,8 +13,8 @@ class PigLatinizer
     words.each do |word|
       case
       when word.match(/^[aeiouAEIOU]/)
-        new_word = word + "way"
-        finished_words << new_word
+        word += "way"
+        finished_words << word
       end
     end
     finished_words.join(",")
