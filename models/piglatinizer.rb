@@ -1,6 +1,6 @@
 class PigLatinizer
 
-  def convert_to_piglatin
+  def convert_to_piglatin(text)
     words = text.split(" ")
     finished_words = []
 
