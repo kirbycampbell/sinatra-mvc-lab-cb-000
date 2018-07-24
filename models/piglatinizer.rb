@@ -17,8 +17,9 @@ class PigLatinizer
         finished_words << word
       when word.match(/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{2}/)
         dub_consonant = word[/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{2}/]
-        word -= dub_consonant
+        word = word[2..-1]
         word += dub_consonant
+        word += "ay"
         finished_words << word
       end
     end
