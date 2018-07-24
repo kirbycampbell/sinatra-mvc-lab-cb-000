@@ -12,7 +12,7 @@ class PigLatinizer
       when word.match(/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{3}/)
         trip_consonant = word[/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{3}/]
         word = word[3..-1]
-        word += dub_consonant
+        word += trip_consonant
         word += "ay"
         finished_words << word
       when word.match(/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{2}/)
@@ -24,7 +24,7 @@ class PigLatinizer
       when word.match(/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/)
         uno_consonant = word[/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/]
         word = word[1..-1]
-        word += dub_consonant
+        word += uno_consonant
         word += "ay"
         finished_words << word
       end
