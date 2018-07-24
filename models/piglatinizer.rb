@@ -29,7 +29,7 @@ class PigLatinizer
         finished_words << word
       end
     end
-    finished_words.join(",")
+    finished_words.join(" ")
   end
 
 end
