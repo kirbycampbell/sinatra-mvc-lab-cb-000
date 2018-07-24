@@ -21,14 +21,13 @@ class PigLatinizer
         word += dub_consonant
         word += "ay"
         finished_words << word
+      when word.match(/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/)
+        dub_consonant = word[/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/]
+        word = word[1..-1]
+        word += dub_consonant
+        word += "ay"
+        finished_words << word
       end
-    when word.match(/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/)
-      dub_consonant = word[/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/]
-      word = word[1..-1]
-      word += dub_consonant
-      word += "ay"
-      finished_words << word
-    end
     end
     finished_words.join(",")
   end
