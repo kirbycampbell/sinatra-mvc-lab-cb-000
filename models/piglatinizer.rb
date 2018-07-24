@@ -15,8 +15,8 @@ class PigLatinizer
       when word.match(/^[aeiouAEIOU]/)
         word += "way"
         finished_words << word
-      when word.match(/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{2})
-        dub_consonant = word[/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{2}]
+      when word.match(/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{2}/)
+        dub_consonant = word[/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{2}/]
         word -= dub_consonant
         word += dub_consonant
         finished_words << word
