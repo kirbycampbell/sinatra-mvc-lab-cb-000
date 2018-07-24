@@ -9,15 +9,15 @@ class PigLatinizer
       when word.match(/^[aeiouAEIOU]/)
         word += "way"
         finished_words << word
-      when word.match(/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{2}/)
-        dub_consonant = word[/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{2}/]
-        word = word[2..-1]
-        word += dub_consonant
-        word += "ay"
-        finished_words << word
       when word.match(/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{3}/)
         dub_consonant = word[/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{3}/]
         word = word[3..-1]
+        word += dub_consonant
+        word += "ay"
+        finished_words << word
+      when word.match(/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{2}/)
+        dub_consonant = word[/^[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{2}/]
+        word = word[2..-1]
         word += dub_consonant
         word += "ay"
         finished_words << word
